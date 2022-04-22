@@ -1,0 +1,2 @@
+class Categorymenu < ApplicationRecord
+end
