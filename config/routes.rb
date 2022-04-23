@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :categories
+  resources :menus
   
   get "sign_in", to: "sessions#new"
   post "sign_in", to: "sessions#create"

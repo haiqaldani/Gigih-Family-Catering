@@ -19,10 +19,12 @@ ActiveRecord::Schema.define(version: 2022_04_22_175737) do
   end
 
   create_table "categorymenus", force: :cascade do |t|
-    t.integer "menu_id", null: false
-    t.integer "category_id", null: false
+    t.integer "menu_id"
+    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_categorymenus_on_category_id"
+    t.index ["menu_id"], name: "index_categorymenus_on_menu_id"
   end
 
   create_table "menus", force: :cascade do |t|
@@ -34,12 +36,14 @@ ActiveRecord::Schema.define(version: 2022_04_22_175737) do
   end
 
   create_table "order_details", force: :cascade do |t|
-    t.integer "order_id", null: false
-    t.integer "menu_id", null: false
+    t.integer "order_id"
+    t.integer "menu_id"
     t.float "price", null: false
     t.integer "quantity", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["menu_id"], name: "index_order_details_on_menu_id"
+    t.index ["order_id"], name: "index_order_details_on_order_id"
   end
 
   create_table "orders", force: :cascade do |t|
