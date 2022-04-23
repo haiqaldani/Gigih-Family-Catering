@@ -1,0 +1,14 @@
+<%= form_with model: category do |form| %>
+
+  <%= render "shared/form_errors", form: form %>
+  
+  <div class="field form-group">
+    <% form.label :name %>
+    <%= form.text_field :name, class:"form-control", placeholder: "Name Category" %>
+  </div>
+
+<br/>
+  <div class="actions">
+    <%= form.submit class:'btn btn-secondary' %>
+  </div>
+<% end %>

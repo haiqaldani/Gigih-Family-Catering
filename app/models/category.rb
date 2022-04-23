@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  has_many: categorymenus
+  has_many :categorymenus
 
-  validates: name, presence: true
+  validates :name, presence: true
 end
